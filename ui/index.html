@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/elementui.css">
+</head>
+<body>
+    <!-- <div class="container">
+        <img src="https://images.unsplash.com/photo-1587006856624-ccbe6e345c4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=793&q=80" alt="orange and white cat on brown plant">
+    </div> -->
+
+    <div id="app">
+        <el-container>
+            <el-header>
+
+            </el-header>
+            <el-main>
+                <el-row :gutter="20">
+                    <el-col :span="6">
+                        <draggable class="list-group" v-model="actionList"  animation="300" dragClass="dragClass" ghostClass="ghostClass" chosenClass="chosenClass" @start="onStart" @end="onEnd">
+                            <transition-group>
+                                <el-card shadow="always" 
+                                         v-for="(item,index) in actionList" 
+                                         style="margin:5px;" 
+                                         shape="square" 
+                                         :key="index">
+                                         <el-row>
+                                            <el-col :span="6">
+                                                {{item.name}}
+                                            </el-col>
+                                            <el-col :span="6">
+                                                <div class="bottom clearfix">
+                                                    <el-button type="text" class="button">操作按钮</el-button>
+                                                </div>
+                                            </el-col>
+                                         </el-row>
+                                </el-card>
+                            </transition-group>
+                        </draggable>
+                    </el-col>  
+                    <el-col :span="6">
+
+
+                    </el-col>  
+                </el-row>
+            </el-main>
+        </el-container>
+    </div>
+
+   
+
+    <script src="./js/mixin.js" type="text/javascript"></script>
+    <script src="./js/vue.js" type="text/javascript"></script>
+    <script src="./js/httpVueLoader.js" type="text/javascript"></script>
+    <script src="./js/vue-router.js" type="text/javascript"></script>
+    <script src="./js/axios.min.js" type="text/javascript"></script>
+    <script src="./js/elementui.js" type="text/javascript"></script>
+    <script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script>
+    <script src="./js/index.js" type="text/javascript"></script>
+    
+</body>
+</html>
