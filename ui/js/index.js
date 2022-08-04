@@ -1,10 +1,16 @@
-﻿let vm = new Vue({
+﻿const setDragCursor = value => {
+    const html = document.getElementsByTagName('html').item(0)
+    html.classList.toggle('grabbing', value)
+}
+
+
+let vm = new Vue({
     mixins: [mixin],
     data() {
         return {
            flowList:[],
            actionList:[{"name":"michael"},{"name":"michael2"},{"name":"michael3"},{"name":"michael4"}],
-           drag: false
+           test:'test'
         }
     },
     components: {
@@ -18,12 +24,18 @@
 
     },
     methods: {
+        onChoose(event){
+            setDragCursor(true);
+        },
         onStart(event) {
-            this.drag = true;
+            setDragCursor(true);
+        },
+        onUnchoose(event){
+            setDragCursor(false);
         },
         onEnd(event) {
-            this.drag = false;
-        }
+            setDragCursor(false);
+        },
     },
     mounted() {
        
